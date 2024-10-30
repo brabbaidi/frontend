@@ -1,23 +1,20 @@
 // src/components/ProductCard.jsx
 import React from 'react';
+import './ProductCard.css';
+
 
 const ProductCard = ({ product }) => {
     return (
-        <div style={styles.card}>
+        <div className="card">
             <h3>{product.name}</h3>
-            <p>{product.description}</p>
+            <img src={product.image} alt={product.name} className="image" />
+            <p>{product.price}</p>
+
             <p>Price: ${product.price}</p>
         </div>
     );
 };
 
-const styles = {
-    card: {
-        border: '1px solid #ccc',
-        borderRadius: '4px',
-        padding: '10px',
-        textAlign: 'center',
-    },
-};
+
 
 export default ProductCard;

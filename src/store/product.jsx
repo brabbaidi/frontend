@@ -14,19 +14,22 @@ export const ProductProvider = ({ children }) => {
             if (!res.ok) throw new Error('Network response was not ok');
             const data = await res.json();
             console.log(data); // Log response to check its structure
-            setProducts(data.products || data); // Adjust based on response structure
+            //setProducts(data.products || data); // Adjust based on response structure
+            setProducts(data.products || data.data); // Adjust based on response structure
         } catch (error) {
             console.error('Failed to fetch products:', error);
         }
     };
 
     const createProduct = async (newProduct) => {
+        console.log(import.meta.env.VITE_API_URL);
         try {
             const res = await fetch(`${import.meta.env.VITE_API_URL}/products`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newProduct),
             });
+            console.log(res);
             const data = await res.json();
             setProducts((prev) => [...prev, data]);
             return { success: true, message: 'Product created successfully' };

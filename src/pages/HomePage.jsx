@@ -6,9 +6,11 @@ import ProductCard from "../components/ProductCart"; // Ensure the filename matc
 const HomePage = () => {
     const { products, fetchProducts } = useProductContext();
 
+    console.log(products);
+
     useEffect(() => {
         fetchProducts();
-    }, [fetchProducts]); // Add fetchProducts to dependency array
+    }, []); // Add fetchProducts to dependency array
 
     return (
         <div style={styles.container}>
