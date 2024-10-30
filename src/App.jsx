@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
+import DeletePage from './pages/DeletePage';
 
 const App = () => (
   <Router>
@@ -11,6 +12,8 @@ const App = () => (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/create" element={<CreatePage />} />
+      <Route path="/delete-product" element={<DeletePage />} />
+
     </Routes>
   </Router>
 );

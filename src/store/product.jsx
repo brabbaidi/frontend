@@ -39,6 +39,21 @@ export const ProductProvider = ({ children }) => {
         }
     };
 
+    const deleteProduct = async (id) => {
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/products/${id}`, {
+                method: 'DELETE',
+            });
+            if (!res.ok) throw new Error('Network response was not ok');
+            setProducts((prev) => prev.filter((product) => product._id !== id));
+            return { success: true, message: 'Product deleted successfully' };
+        } catch (error) {
+            console.error('Failed to delete product:', error);
+            return { success: false, message: 'Product deletion failed' };
+        }
+    };
+    
+
     return (
         <ProductContext.Provider value={{ products, fetchProducts, createProduct }}>
             {children}
