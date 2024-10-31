@@ -5,6 +5,5 @@
 # Challenges
 - Postman/MongoDB (404 error messages)
 
-
-
-
+# Limited access to free e-commerce API's
+- Used https://fakestoreapi.com/ because it is the only one I found

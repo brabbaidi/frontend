@@ -1,0 +1,21 @@
+/* src/components/Navbar.css */
+
+.nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
